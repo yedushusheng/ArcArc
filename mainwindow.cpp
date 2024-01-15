@@ -1,12 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-//#include "qcustomplot.h"
-#include "db_connection.h"
-#include "datainputpanel.h"
-#include "imageprocessing.h"
-#include "login.h"
-#include "password.h"
-#include "userguidiance.h"
 
 #include <QtCore>
 #include <QFileDialog>
@@ -45,7 +38,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //srand(QDateTime::currentDateTime().toTime_t());
     ui->setupUi(this);
-    setWindowTitle(QObject::tr("北京市建筑图像文化遗产数据库"));
+    setWindowTitle(QObject::tr("海派建筑图像文化遗产数据库"));
 
     //QTextCodec::setCodecForTr(QTextCodec::codecForLocale());
     resize(1000,500);
@@ -116,34 +109,28 @@ void MainWindow::on_action_L_triggered()
         data_input_palel_dialog->show();
         if(data_input_palel_dialog->image->load(fileName))
         {
-            //cv::Mat dst, edge, src;
-            //src = QImage2cvMat(*(data_input_palel_dialog->image));
-            //blur(src, edge, cv::Size(3, 3));
-            //dst.create(src.size(), src.type());
-            //Canny(edge, edge, 100, 150, 3);
-            //dst = cv::Scalar::all(0);
-            //src.copyTo(dst, edge);
-            //QImage final_image = cvMat2QImage(dst);
             data_input_palel_dialog->SetGraphicsView(data_input_palel_dialog->image);
         }
     }
+    /*
     // 数据持久化到SQLite
     if (createConnection()) return;
     CHI_Data data;
+
     data.id = 1;
     data.name = "鸱吻";
     data.author = "未知";
     data.description = "明代宫廷建筑饰品";
-    data.generation = "明代";
-    data.region = "北京故宫";
     data.size_info.chi_height = 1;
     data.size_info.chi_length = 2;
     data.size_info.chi_width = 3;
     qDebug() << "insert chi_struct data begin";
     insertCHIStruct(data);
     qDebug() << "insert chi_struct data finish";
+    */
 
     // for debug
+    /*
     QVector<CHI_Data> data_array;
     qDebug() << "select chi_struct data begin";
     queryCHIStruct(data_array);
@@ -153,6 +140,7 @@ void MainWindow::on_action_L_triggered()
         qDebug() << "select chi_struct data: " << tmp_data.author << tmp_data.description;
         qDebug() << "select chi_struct data have result";
     }
+    */
 }
 
 // 文件(F) -> 打印(P)
@@ -205,7 +193,10 @@ void MainWindow::on_local_search_triggered()
      * 如果是多条记录则按照网页的方式展示
     */
     QVector<CHI_Data> results;
-    queryCHIStruct(results);
+    // TODO:add new database intrerface (SELECT)
+    SqliteOperator sql_operator;
+    sql_operator.openDb();
+    sql_operator.queryTable(results);
 
     ResultDisplay *result_display = new ResultDisplay;
     CHI_Data data;
@@ -214,13 +205,17 @@ void MainWindow::on_local_search_triggered()
 
         data.id = results[i].id;
         data.name = results[i].name;
+        data.type = results[i].type;
         data.author = results[i].author;
+        data.years =  results[i].years;
         data.description = results[i].description;
-        data.generation = results[i].generation;
-        data.region = results[i].region;
         data.size_info.chi_height = results[i].size_info.chi_height;
         data.size_info.chi_length = results[i].size_info.chi_length;
         data.size_info.chi_width = results[i].size_info.chi_width;
+        data.location_info.city_name = "上海";
+        data.location_info.latitude = 12;
+        data.location_info.longitude = 23;
+        data.image = results[i].image;
     }
     result_display->SetResult(data);
     result_display->show();

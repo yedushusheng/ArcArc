@@ -14,12 +14,13 @@
 //#include <QtOpenGL/QGLWidget>
 
 #include "about.h"
-#include "db_connection.h"
+#include "sqliteoperator.h"
 #include "login.h"
 #include "password.h"
 #include "resultdisplay.h"
-
-//#include "qcustomplot.h"
+#include "datainputpanel.h"
+#include "imageprocessing.h"
+#include "userguidiance.h"
 
 namespace Ui {
 class MainWindow;

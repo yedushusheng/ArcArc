@@ -1,7 +1,8 @@
 #ifndef DATAINPUTPANEL_H
 #define DATAINPUTPANEL_H
 
-#include "db_connection.h"
+//#include "db_connection.h"
+#include "sqliteoperator.h"
 #include "imageprocessing.h"
 
 #include <QDialog>
@@ -33,7 +34,7 @@ public:
     void SetGraphicsView(QImage *image);
     // load image data info
     void SetImageBasicInfo(qlonglong id, QString &name, QString &type, QString &author,
-                              QString &region, QString &years, QString &generation);
+                            QString &years);
     void SetImageSizeInfo(SIZE_T &size);
     void SetImageLocationInfo(LOACATION_T &location);
     void SetImageDescription(QString &description);

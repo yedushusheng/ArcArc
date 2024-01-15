@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>查询结果</string>
   </property>
   <widget class="QGraphicsView" name="graphicsView">
    <property name="geometry">
@@ -44,47 +44,37 @@
    </item>
    <item>
     <property name="text">
-     <string>名称</string>
+     <string>名称：</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>类型</string>
+     <string>类型：</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>作者</string>
+     <string>作者：</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>地区</string>
+     <string>年代：</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>朝代</string>
+     <string>尺寸：</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>纪元</string>
+     <string>GIS：</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>尺寸</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>GIS</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>描述</string>
+     <string>描述：</string>
     </property>
    </item>
   </widget>

@@ -1,7 +1,8 @@
 #ifndef RESULTDISPLAY_H
 #define RESULTDISPLAY_H
 
-#include "db_connection.h"
+//#include "db_connection.h"
+#include "sqliteoperator.h"
 
 #include <QDialog>
 

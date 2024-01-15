@@ -66,14 +66,14 @@ void DataInputPanel::SetGraphicsView(QImage *image)
     QImage adaptive_image = SetAdaptiveDisplay(image);
 
     // opencv处理图片生成纹理图
-    ImageProcessing *image_processing = new ImageProcessing();
-    QImage gray_image = image_processing->Gray(adaptive_image);
+    //ImageProcessing *image_processing = new ImageProcessing();
+    //QImage gray_image = image_processing->Gray(adaptive_image);
     //QImage edge_detection_image = image_processing->EdgeDetection(gray_image);
     //QImage mean_filter_image = image_processing->MeanFilter(edge_detection_image);
 
     // 显示图
     QGraphicsScene *scene = new QGraphicsScene;
-    scene->addPixmap(QPixmap::fromImage(gray_image));
+    scene->addPixmap(QPixmap::fromImage(adaptive_image));
     ui->graphicsView->setScene(scene);
     ui->graphicsView->show();
 }
@@ -88,15 +88,13 @@ void DataInputPanel::SetGraphicsView(QImage *image)
  * 7.世纪
 */
 void DataInputPanel::SetImageBasicInfo(qlonglong id, QString &name, QString &type, QString &author,
-                                          QString &region, QString &years, QString &generation)
+                                        QString &years)
 {
     m_data->id = id;
     m_data->name = name;
     m_data->type = type;
     m_data->author = author;
-    m_data->region = region;
     m_data->years = years;
-    m_data->generation = generation;
 }
 
 /* 初始化图片的尺寸信息:
@@ -132,47 +130,31 @@ void DataInputPanel::SetImageDescription(QString &description) {
 
 void DataInputPanel::on_ok_pushButton_clicked()
 {
+    CHI_Data chi_data;
     // ID编号
-    qlonglong id;
     if(!ui->id_comboBox->currentText().isEmpty())
     {
-        id = ui->id_comboBox->currentText().toLongLong();
+        chi_data.id = ui->id_comboBox->currentText().toLongLong();
     }
     // 名称(name)
-    QString name;
     if (!ui->name_lineEdit->selectedText().isEmpty())
     {
-        name = ui->name_lineEdit->selectedText();
+        chi_data.name = ui->name_lineEdit->selectedText();
     }
     // 类型(type)
-    QString type;
     if (!ui->type_comboBox->currentText().isEmpty())
     {
-        type = ui->type_comboBox->currentText();
+        chi_data.type = ui->type_comboBox->currentText();
     }
     // 作者(author)
-    QString author;
     if (!ui->author_lineEdit->selectedText().isEmpty())
     {
-        author = ui->author_lineEdit->selectedText();
+        chi_data.author = ui->author_lineEdit->selectedText();
     }
-    // 地区(region)
-    QString region;
-    if (!ui->region_lineEdit->selectedText().isEmpty())
+    // 年代(year)
+    if (!ui->year_lineEdit->selectedText().isEmpty())
     {
-        region = ui->region_lineEdit->selectedText();
-    }
-    // 朝代(years)
-    QString years;
-    if (!ui->year_comboBox->currentText().isEmpty())
-    {
-        years = ui->year_comboBox->currentText();
-    }
-    // 纪元(generation)
-    QString generation;
-    if (!ui->generation_comboBox->currentText().isEmpty())
-    {
-        generation = ui->generation_comboBox->currentText();
+        chi_data.years = ui->year_lineEdit->selectedText();
     }
     // 尺寸
     qlonglong length;
@@ -190,7 +172,9 @@ void DataInputPanel::on_ok_pushButton_clicked()
     {
         height = ui->size_height_lineEdit->selectedText().toLongLong();
     }
-    // 位置
+    chi_data.size_info.chi_height = height;
+    chi_data.size_info.chi_length = length;
+    chi_data.size_info.chi_width = width;
 
 
     // 描述(description)
@@ -199,8 +183,21 @@ void DataInputPanel::on_ok_pushButton_clicked()
     {
         description = ui->description_textEdit->document()->toPlainText();
     }
+    // 数据持久化到SQLite(TODO:use new database interface)
+    //创建并打开SQLite数据库
+    SqliteOperator db_operator;
+    db_operator.openDb();
+    // for debug
+    QString table_name = "chi_decoration_info";
+    if (db_operator.isTableExist(table_name)) {
+        db_operator.deleteTable(table_name);
+    }
 
-    QMessageBox::information(this, QObject::tr("加载图像信息"), QObject::tr("加载图像信息成功！"), QMessageBox::Ok);
+    // 创建数据表
+    db_operator.createTable();
+    db_operator.singleInsertData(chi_data);
+
+    //QMessageBox::information(this, QObject::tr("加载图像信息"), QObject::tr("加载图像信息成功！"), QMessageBox::Ok);
 }
 
 void DataInputPanel::on_cancle_pushButton_clicked()
@@ -210,9 +207,6 @@ void DataInputPanel::on_cancle_pushButton_clicked()
     ui->name_lineEdit->clear();
     //ui->type_comboBox->clear();
     //ui->author_lineEdit->clear();
-    //ui->region_lineEdit->clear();
-    ui->year_comboBox->clear();
-    ui->generation_comboBox->clear();
     //ui->size_height_lineEdit->clear();
     //ui->size_length_lineEdit->clear();
     //ui->size_width_lineEdit->clear();
