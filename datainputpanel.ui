@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DataInputPanel</class>
+ <widget class="QDialog" name="DataInputPanel">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>839</width>
+    <height>574</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QGraphicsView" name="graphicsView">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>431</width>
+     <height>521</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>30</y>
+     <width>54</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>编号</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>70</y>
+     <width>54</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>名称</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>70</y>
+     <width>31</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>类型</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>120</y>
+     <width>54</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>作者</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>110</y>
+     <width>54</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>地区</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>200</y>
+     <width>41</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>朝代</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>200</y>
+     <width>31</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>纪元</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>290</y>
+     <width>51</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>尺寸(cm)</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_10">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>460</y>
+     <width>41</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>描述</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="description_textEdit">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>440</y>
+     <width>301</width>
+     <height>70</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="type_comboBox">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>70</y>
+     <width>111</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>建筑</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>绘画</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>书法</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>雕刻</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>金属工艺</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>刀剑</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>陶瓷</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>漆器工艺</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>染织</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>考古</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>历史资料</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>故宫</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>其他</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="year_comboBox">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>200</y>
+     <width>111</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>中国 - 夏</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 商</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 西周</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 春秋</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 战国</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 秦</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 西汉</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 东汉</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 三国时期</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 西晋</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 东晋</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 南朝</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 北朝</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 隋</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 唐</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 五代</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 十国</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 北宋</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 南宋</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 辽</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 西夏</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 金</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 元</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 明</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中国 - 清</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中华民国</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>中华人民共和国</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>未知</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="generation_comboBox">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>200</y>
+     <width>111</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>公元前</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>1世纪</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>2世纪</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>3世纪</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>4世纪</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>5世纪</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>6世纪</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>7世纪</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>8世纪</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>9世纪</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>10世纪</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>11世纪</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>12世纪</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>13世纪</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>14世纪</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>15世纪</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>16世纪</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>17世纪</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>18世纪</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>19世纪</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>20世纪</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>21世纪</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>未知</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="id_comboBox">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>30</y>
+     <width>111</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>手动编号</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>自动编号</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLineEdit" name="name_lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>70</y>
+     <width>113</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="author_lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>110</y>
+     <width>113</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="region_lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>110</y>
+     <width>113</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="size_width_lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>630</x>
+     <y>290</y>
+     <width>51</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="size_length_lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>290</y>
+     <width>51</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="size_height_lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>290</y>
+     <width>51</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ok_pushButton">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>520</y>
+     <width>80</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>确定</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cancle_pushButton">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>520</y>
+     <width>80</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>取消</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_11">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>290</y>
+     <width>21</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>长</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_12">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>290</y>
+     <width>21</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>宽</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_13">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>290</y>
+     <width>21</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>高</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>160</y>
+     <width>381</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>时间信息</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>10</y>
+     <width>381</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>基本信息</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>270</y>
+     <width>381</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>结构信息</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_4">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>350</y>
+     <width>381</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>GIS信息</string>
+   </property>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>41</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>维度</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="location_comboBox">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>40</y>
+      <width>111</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>自动获取</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>手动输入</string>
+     </property>
+    </item>
+   </widget>
+  </widget>
+  <zorder>groupBox_4</zorder>
+  <zorder>groupBox_2</zorder>
+  <zorder>groupBox</zorder>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label_5</zorder>
+  <zorder>label_6</zorder>
+  <zorder>label_7</zorder>
+  <zorder>label_8</zorder>
+  <zorder>label_10</zorder>
+  <zorder>description_textEdit</zorder>
+  <zorder>type_comboBox</zorder>
+  <zorder>year_comboBox</zorder>
+  <zorder>generation_comboBox</zorder>
+  <zorder>id_comboBox</zorder>
+  <zorder>name_lineEdit</zorder>
+  <zorder>author_lineEdit</zorder>
+  <zorder>region_lineEdit</zorder>
+  <zorder>size_width_lineEdit</zorder>
+  <zorder>size_length_lineEdit</zorder>
+  <zorder>size_height_lineEdit</zorder>
+  <zorder>ok_pushButton</zorder>
+  <zorder>cancle_pushButton</zorder>
+  <zorder>graphicsView</zorder>
+  <zorder>label_11</zorder>
+  <zorder>label_12</zorder>
+  <zorder>label_13</zorder>
+  <zorder>groupBox_3</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
